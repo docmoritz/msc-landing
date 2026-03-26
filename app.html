@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dein Lernplan — MicroSkills SKL</title>
+  <meta name="description" content="Deine SKL-Lernmodule. Starte jetzt mit Neurologie, Orthopädie und Innerer Medizin." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.svg" sizes="any" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:       #EDAD47;
+      --green-dark:   #4B89DC;
+      --green-mid:    #7AAEE8;
+      --green-light:  #D6E8FA;
+      --green-xlight: #EEF5FC;
+      --bg:           #F5F8FD;
+      --text:         #1A1A1A;
+      --text-muted:   #5A6A82;
+      --border:       #C6D9F0;
+      --white:        #FFFFFF;
+      --shadow-sm:    0 1px 4px rgba(75,137,220,0.08);
+      --shadow-md:    0 4px 20px rgba(75,137,220,0.12);
+      --radius:       10px;
+      --radius-lg:    16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    a { color: var(--green-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    img { max-width: 100%; display: block; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ─── Layout ───────────────────────────────────────────── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ─── Nav ──────────────────────────────────────────────── */
+    .nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .nav__logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .nav__logo span {
+      color: var(--green-mid);
+    }
+
+    .nav__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .nav__badge--paid {
+      background: var(--green-light);
+      color: var(--green-dark);
+    }
+
+    .nav__badge--trial {
+      background: #FFF8E1;
+      color: #7A5C00;
+    }
+
+    .nav__badge__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ─── Loading Screen ────────────────────────────────────── */
+    #loading-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 57px);
+      gap: 20px;
+    }
+
+    .spinner {
+      width: 44px;
+      height: 44px;
+      border: 3px solid var(--green-light);
+      border-top-color: var(--green-mid);
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ─── Error Screen ──────────────────────────────────────── */
+    #error-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 57px);
+      text-align: center;
+      padding: 40px 20px;
+      gap: 16px;
+    }
+
+    .error-icon {
+      font-size: 2.5rem;
+    }
+
+    .error-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .error-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 380px;
+      line-height: 1.6;
+    }
+
+    .btn-retry {
+      display: inline-block;
+      background: var(--green-dark);
+      color: var(--white);
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 11px 24px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.12s ease;
+    }
+
+    .btn-retry:hover {
+      background: #2E6AB8;
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    /* ─── App Content ───────────────────────────────────────── */
+    #app-content {
+      display: none;
+    }
+
+    /* ─── Hero ──────────────────────────────────────────────── */
+    .hero {
+      padding: 56px 0 44px;
+      text-align: center;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.65rem, 4vw, 2.4rem);
+      color: var(--text);
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero__sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── Module Grid ───────────────────────────────────────── */
+    .modules {
+      padding: 0 0 56px;
+    }
+
+    .modules__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 560px) {
+      .modules__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 860px) {
+      .modules__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .module-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: box-shadow 0.18s ease, transform 0.12s ease;
+    }
+
+    .module-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .module-card__icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .module-card__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    .module-card__desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .btn-module {
+      display: block;
+      width: 100%;
+      background: var(--green-xlight);
+      color: var(--green-dark);
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--green-light);
+      cursor: pointer;
+      transition: background 0.18s ease, border-color 0.18s ease;
+      text-align: center;
+    }
+
+    .btn-module:hover {
+      background: var(--green-light);
+      border-color: var(--green-mid);
+    }
+
+    /* ─── H5P Container ─────────────────────────────────────── */
+    .h5p-section {
+      padding: 0 0 72px;
+    }
+
+    .h5p-section__label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .h5p-subject-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .h5p-tab-btn {
+      font-family: 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 16px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .h5p-tab-btn:hover {
+      background: var(--green-xlight);
+      border-color: var(--green-mid);
+      color: var(--green-dark);
+    }
+
+    .h5p-tab-btn.active {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      color: var(--white);
+    }
+
+    .h5p-embed-wrapper {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .h5p-embed-wrapper iframe {
+      display: block;
+      width: 100%;
+      border: none;
+      min-height: 540px;
+    }
+
+    .h5p-unavailable {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      gap: 12px;
+      background: var(--green-xlight);
+      border-radius: var(--radius-lg);
+      border: 1px dashed var(--green-mid);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .h5p-unavailable__icon {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .h5p-unavailable__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .h5p-unavailable__text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      max-width: 340px;
+      line-height: 1.55;
+    }
+
+    .h5p-unavailable__module {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      margin-top: 4px;
+    }
+
+    .h5p-loading-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      gap: 14px;
+    }
+
+    .h5p-spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--green-light);
+      border-top-color: var(--green-dark);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .h5p-loading-state p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* ─── Footer ────────────────────────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer a {
+      color: var(--text-muted);
+    }
+
+    .footer a:hover {
+      color: var(--green-dark);
+      text-decoration: underline;
+    }
+
+    .footer__sep {
+      margin: 0 8px;
+      opacity: 0.5;
+    }
+
+    /* ─── Toast ─────────────────────────────────────────────── */
+    #toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      background: var(--text);
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      max-width: 320px;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      pointer-events: none;
+    }
+
+    #toast.toast--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script defer data-domain="microskills.docmoritz.academy" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+
+  <!-- ─── Nav ───────────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="nav__inner">
+      <div class="nav__logo">Micro<span>Skills</span></div>
+      <div id="nav-badge" class="nav__badge nav__badge--paid" aria-live="polite">
+        <span class="nav__badge__dot"></span>
+        <span id="nav-badge-text">SKL-Zugang aktiv</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── Loading Screen ────────────────────────────────────── -->
+  <div id="loading-screen" role="status" aria-label="Zugang wird geprüft">
+    <div class="spinner"></div>
+    <p class="loading-text">Zugang wird geprüft…</p>
+  </div>
+
+  <!-- ─── Error Screen ──────────────────────────────────────── -->
+  <div id="error-screen" role="alert">
+    <div class="error-icon">⚠️</div>
+    <p class="error-title">Verbindung fehlgeschlagen</p>
+    <p class="error-text" id="error-message">Dein Zugang konnte nicht geladen werden. Bitte versuche es erneut.</p>
+    <button class="btn-retry" onclick="init()">Erneut versuchen</button>
+  </div>
+
+  <!-- ─── App Content ───────────────────────────────────────── -->
+  <div id="app-content">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__badge">
+          <span>Dein Lernplan</span>
+        </div>
+        <h1>Dein SKL-Lernplan</h1>
+        <p class="hero__sub">Drei Module, die dich gezielt auf die Staatliche Kenntnisprüfung vorbereiten — klar strukturiert, lernwirksam aufbereitet.</p>
+      </div>
+    </section>
+
+    <!-- Module Grid -->
+    <section class="modules">
+      <div class="container">
+        <div class="modules__grid">
+
+          <article class="module-card">
+            <div class="module-card__icon">🧠</div>
+            <h2 class="module-card__title">Neurologie</h2>
+            <p class="module-card__desc">Befunderhebung, klinisches Reasoning</p>
+            <button class="btn-module" onclick="showComingSoon()">Lernen</button>
+          </article>
+
+          <article class="module-card">
+            <div class="module-card__icon">🦴</div>
+            <h2 class="module-card__title">Orthopädie</h2>
+            <p class="module-card__desc">Befunde einordnen, Handlungsbedarf erkennen</p>
+            <button class="btn-module" onclick="showComingSoon()">Lernen</button>
+          </article>
+
+          <article class="module-card">
+            <div class="module-card__icon">🫀</div>
+            <h2 class="module-card__title">Innere Medizin</h2>
+            <p class="module-card__desc">Vitale Zeichen, ärztliche Schnittstelle</p>
+            <button class="btn-module" onclick="showComingSoon()">Lernen</button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- H5P Embed -->
+    <section class="h5p-section">
+      <div class="container">
+        <p class="h5p-section__label">Lernmodul ausprobieren</p>
+
+        <!-- Fachgebiet-Auswahl -->
+        <div class="h5p-subject-tabs" role="group" aria-label="Fachgebiet auswählen">
+          <button class="h5p-tab-btn active" data-slug="innere-medizin-skl" onclick="loadH5P(this)">Innere Medizin</button>
+          <button class="h5p-tab-btn" data-slug="neurologie-skl" onclick="loadH5P(this)">Neurologie</button>
+          <button class="h5p-tab-btn" data-slug="orthopaedie-skl" onclick="loadH5P(this)">Orthopädie</button>
+          <button class="h5p-tab-btn" data-slug="chirurgie-skl" onclick="loadH5P(this)">Chirurgie</button>
+          <button class="h5p-tab-btn" data-slug="gynaekologie-skl" onclick="loadH5P(this)">Gynäkologie</button>
+          <button class="h5p-tab-btn" data-slug="paediatrie-skl" onclick="loadH5P(this)">Pädiatrie</button>
+        </div>
+
+        <!-- H5P Embed Area -->
+        <div id="h5p-container" aria-label="H5P-Lernmodul">
+          <!-- wird per JS befüllt -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      Fragen?
+      <a href="mailto:support@microskills.docmoritz.academy">support@microskills.docmoritz.academy</a>
+      <span class="footer__sep">|</span>
+      <a href="/impressum">Impressum</a>
+      <span class="footer__sep">|</span>
+      <a href="/datenschutz">Datenschutz</a>
+    </footer>
+
+  </div><!-- /#app-content -->
+
+  <!-- ─── Toast ─────────────────────────────────────────────── -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    /* ─── Helpers ──────────────────────────────────────────── */
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name);
+    }
+
+    function showToast(message) {
+      var el = document.getElementById('toast');
+      el.textContent = message;
+      el.classList.add('toast--visible');
+      setTimeout(function() {
+        el.classList.remove('toast--visible');
+      }, 3000);
+    }
+
+    function showComingSoon() {
+      showToast('Inhalte kommen in Kürze!');
+    }
+
+    /* ─── UI State ─────────────────────────────────────────── */
+    function showLoading() {
+      document.getElementById('loading-screen').style.display = 'flex';
+      document.getElementById('error-screen').style.display = 'none';
+      document.getElementById('app-content').style.display = 'none';
+    }
+
+    function showApp(statusData) {
+      document.getElementById('loading-screen').style.display = 'none';
+      document.getElementById('error-screen').style.display = 'none';
+      document.getElementById('app-content').style.display = 'block';
+
+      var badge = document.getElementById('nav-badge');
+      var badgeText = document.getElementById('nav-badge-text');
+
+      if (statusData.status === 'paid') {
+        badge.className = 'nav__badge nav__badge--paid';
+        badgeText.textContent = 'SKL-Zugang aktiv';
+      } else if (statusData.status === 'active') {
+        badge.className = 'nav__badge nav__badge--trial';
+        var days = statusData.days_remaining;
+        if (typeof days === 'number' && days >= 0) {
+          badgeText.textContent = 'Trial — noch ' + days + ' Tag' + (days === 1 ? '' : 'e');
+        } else {
+          badgeText.textContent = 'Trial läuft';
+        }
+      }
+
+      /* H5P-Embed initialisieren */
+      initH5P();
+    }
+
+    function showError(message) {
+      document.getElementById('loading-screen').style.display = 'none';
+      document.getElementById('error-screen').style.display = 'flex';
+      document.getElementById('app-content').style.display = 'none';
+      if (message) {
+        document.getElementById('error-message').textContent = message;
+      }
+    }
+
+    /* ─── Main Flow ────────────────────────────────────────── */
+    function init() {
+      showLoading();
+
+      /* 1. Token aus URL-Param oder sessionStorage */
+      var tokenFromUrl = getParam('token');
+      var token;
+
+      if (tokenFromUrl) {
+        token = tokenFromUrl;
+        try { sessionStorage.setItem('trial_token', token); } catch(e) {}
+        /* URL bereinigen ohne Reload */
+        var cleanUrl = window.location.pathname;
+        window.history.replaceState(null, '', cleanUrl);
+      } else {
+        try { token = sessionStorage.getItem('trial_token'); } catch(e) {}
+      }
+
+      /* 2. Kein Token → redirect zur Startseite */
+      if (!token) {
+        window.location.href = '/';
+        return;
+      }
+
+      /* 3. API-Status prüfen */
+      fetch('/api/trial/status', {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'Accept': 'application/json'
+        }
+      })
+      .then(function(response) {
+        if (!response.ok) {
+          return response.json().catch(function() {
+            throw new Error('HTTP ' + response.status);
+          }).then(function(body) {
+            throw new Error(body.message || 'HTTP ' + response.status);
+          });
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        /* 4. Status-Handling */
+        if (data.status === 'active' || data.status === 'paid') {
+          showApp(data);
+        } else if (data.status === 'expired') {
+          window.location.href = '/paywall.html?token=' + encodeURIComponent(token);
+        } else {
+          showError('Unbekannter Zugangsstatus. Bitte wende dich an den Support.');
+        }
+      })
+      .catch(function(err) {
+        console.error('[MicroSkills] Status-Check fehlgeschlagen:', err);
+        showError('Verbindung zum Server fehlgeschlagen. Bitte prüfe deine Internetverbindung und versuche es erneut.');
+      });
+    }
+
+    /* ─── H5P Embed ─────────────────────────────────────────── */
+    var H5P_BASE_URL = '/h5p-player/';
+    var H5P_CHECK_TIMEOUT = 6000; /* ms bis Unavailable-Fallback */
+
+    var h5pLabels = {
+      'innere-medizin-skl': 'Innere Medizin',
+      'neurologie-skl':     'Neurologie',
+      'orthopaedie-skl':    'Orthopädie',
+      'chirurgie-skl':      'Chirurgie',
+      'gynaekologie-skl':   'Gynäkologie',
+      'paediatrie-skl':     'Pädiatrie'
+    };
+
+    function loadH5P(btnEl) {
+      /* Tab-Buttons aktualisieren */
+      var allBtns = document.querySelectorAll('.h5p-tab-btn');
+      for (var i = 0; i < allBtns.length; i++) {
+        allBtns[i].classList.remove('active');
+      }
+      btnEl.classList.add('active');
+
+      var slug = btnEl.getAttribute('data-slug');
+      renderH5PEmbed(slug);
+    }
+
+    function renderH5PEmbed(slug) {
+      var container = document.getElementById('h5p-container');
+      var label = h5pLabels[slug] || slug;
+      var url = H5P_BASE_URL + slug;
+
+      /* Loading-State anzeigen */
+      container.innerHTML =
+        '<div class="h5p-loading-state">' +
+          '<div class="h5p-spinner"></div>' +
+          '<p>Modul wird geladen\u2026</p>' +
+        '</div>';
+
+      /* Verfügbarkeit prüfen: HEAD-Request auf den Player-Endpunkt */
+      var checkDone = false;
+
+      var timeout = setTimeout(function() {
+        if (!checkDone) {
+          checkDone = true;
+          showH5PUnavailable(container, label, slug);
+        }
+      }, H5P_CHECK_TIMEOUT);
+
+      fetch(url, { method: 'HEAD', cache: 'no-store' })
+        .then(function(res) {
+          if (checkDone) return;
+          checkDone = true;
+          clearTimeout(timeout);
+          if (res.ok) {
+            showH5PIframe(container, url, label);
+          } else {
+            showH5PUnavailable(container, label, slug);
+          }
+        })
+        .catch(function() {
+          if (checkDone) return;
+          checkDone = true;
+          clearTimeout(timeout);
+          showH5PUnavailable(container, label, slug);
+        });
+    }
+
+    function showH5PIframe(container, url, label) {
+      container.innerHTML =
+        '<div class="h5p-embed-wrapper">' +
+          '<iframe' +
+          ' src="' + url + '"' +
+          ' title="H5P-Lernmodul: ' + label + '"' +
+          ' allowfullscreen' +
+          ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+          ' loading="lazy"' +
+          '></iframe>' +
+        '</div>';
+    }
+
+    function showH5PUnavailable(container, label, slug) {
+      container.innerHTML =
+        '<div class="h5p-unavailable">' +
+          '<div class="h5p-unavailable__icon">📖</div>' +
+          '<p class="h5p-unavailable__title">Modul nach Deploy verfügbar</p>' +
+          '<p class="h5p-unavailable__text">' +
+            'Das interaktive Lernmodul wird nach dem nächsten Deployment unter ' +
+            '<strong>/h5p-player/' + slug + '</strong> erreichbar sein.' +
+          '</p>' +
+          '<span class="h5p-unavailable__module">' + label + '</span>' +
+        '</div>';
+    }
+
+    /* Initiales Modul laden sobald App sichtbar ist */
+    var _h5pInitDone = false;
+    function initH5P() {
+      if (_h5pInitDone) return;
+      _h5pInitDone = true;
+      renderH5PEmbed('innere-medizin-skl');
+    }
+
+    /* Start */
+    init();
+  </script>
+
+</body>
+</html>
