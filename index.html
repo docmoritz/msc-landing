@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spezielle Krankheitslehre Physiotherapie — MicroSkills</title>
-  <meta name="description" content="SKL-Prüfungsvorbereitung im Mikroformat für Physio-Azubis: Neurologie, Orthopädie, Innere Medizin — 10-Minuten-Einheiten auf Physio-Prüfungsniveau, nicht auf Medizinstudenten-Niveau." />
-  <meta name="keywords" content="Spezielle Krankheitslehre Physiotherapie, SKL Staatsexamen, Physio Azubi Prüfungsvorbereitung, PhysTh-APrV, Neurologie Orthopädie Innere Medizin Physiotherapie" />
+  <meta name="description" content="SKL-Prüfungsvorbereitung im Mikroformat für Physio-Azubis: Innere Medizin, Chirurgie, Geriatrie, Arbeitsmedizin, Allgemeine Krankheitslehre — 10-Minuten-Einheiten auf Physio-Prüfungsniveau, nicht auf Medizinstudenten-Niveau." />
+  <meta name="keywords" content="Spezielle Krankheitslehre Physiotherapie, SKL Staatsexamen, Physio Azubi Prüfungsvorbereitung, PhysTh-APrV, Innere Medizin Chirurgie Geriatrie Arbeitsmedizin Allgemeine Krankheitslehre Physiotherapie" />
   <meta property="og:title" content="Spezielle Krankheitslehre Physiotherapie — MicroSkills" />
   <meta property="og:description" content="SKL-Prüfungsvorbereitung im Mikroformat für Physio-Azubis. 10-Minuten-Einheiten, Fallbeispiele, sofortiges Feedback." />
   <meta property="og:type" content="website" />
@@ -768,6 +768,26 @@
     @media (max-width: 400px) {
       .btn-primary { font-size: 0.93rem; padding: 13px 22px; }
     }
+
+    /* ─── Demo Section ─────────────────────────────────────── */
+    .demo-section { background: var(--white); }
+    .demo__label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--green-mid); margin-bottom: 12px; }
+    .demo-section h2 { font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: 12px; letter-spacing: -0.3px; }
+    .demo-section > .container > p { color: var(--text-muted); margin-bottom: 32px; }
+    .demo__card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 20px; }
+    .demo__scenario { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px; line-height: 1.7; }
+    .demo__question { font-weight: 700; font-size: 1.05rem; margin-bottom: 16px; }
+    .demo__options { display: flex; flex-direction: column; gap: 10px; }
+    .demo__option { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; text-align: left; cursor: pointer; font-family: 'Source Sans Pro', sans-serif; font-size: 0.95rem; transition: border-color 0.15s, background 0.15s; }
+    .demo__option:hover { border-color: var(--green-mid); background: var(--green-xlight); }
+    .demo__option.correct { background: #d4edda; border-color: #28a745; color: #155724; }
+    .demo__option.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+    .demo__option:disabled { cursor: default; }
+    .demo__feedback { margin-top: 16px; padding: 16px; border-radius: var(--radius); font-size: 0.95rem; line-height: 1.6; }
+    .demo__feedback.correct { background: #d4edda; border: 1px solid #28a745; color: #155724; }
+    .demo__feedback.wrong { background: #fff3cd; border: 1px solid #ffc107; color: #856404; }
+    .demo__cta { text-align: center; padding: 32px; background: var(--green-xlight); border-radius: var(--radius-lg); margin-top: 24px; }
+    .demo__cta p { margin-bottom: 20px; line-height: 1.6; }
   </style>
   <script defer data-domain="microskills.docmoritz.academy" src="https://plausible.io/js/script.js"></script>
 </head>
@@ -786,7 +806,7 @@
 <!-- ─── Hero ────────────────────────────────────────────────── -->
 <section class="hero" aria-labelledby="hero-heading">
   <div class="container">
-    <div class="hero__badge">SKL-Prüfungsvorbereitung · Bayern &amp; BaWü</div>
+    <div class="hero__badge">SKL-Prüfungsvorbereitung · DACH-Azubis</div>
 
     <!-- Version A (Default) -->
     <h1 id="hero-heading" class="variant-a">
@@ -801,11 +821,11 @@
 
     <!-- Version A sub -->
     <p class="hero__sub variant-a">
-      Neurologie, Orthopädie, Innere Medizin: Die drei SKL-Prüfungsfächer, die die meisten Azubis strubbeln — aufbereitet auf dein Prüfungsniveau, nicht auf Medizinstudenten-Niveau.
+      Innere Medizin, Chirurgie, Geriatrie, Arbeitsmedizin, Allgemeine Krankheitslehre: Die SKL-Prüfungsfächer, mit denen die meisten Azubis kämpfen — aufbereitet auf dein Prüfungsniveau, nicht auf Medizinstudenten-Niveau.
     </p>
     <!-- Version C sub -->
     <p class="hero__sub variant-c" style="display:none">
-      MicroSkills prüft dich in 10 Minuten, ob du Neurologie, Orthopädie und Innere Medizin auf Staatsexamen-Niveau kannst — mit Fallbeispielen, sofortigem Feedback und einem Lernpfad, der genau auf die PhysTh-APrV ausgerichtet ist.
+      MicroSkills prüft dich in 10 Minuten, ob du Innere Medizin, Chirurgie, Geriatrie, Arbeitsmedizin und Allgemeine Krankheitslehre auf Staatsexamen-Niveau kannst — mit Fallbeispielen, sofortigem Feedback und einem Lernpfad, der genau auf die PhysTh-APrV ausgerichtet ist.
     </p>
 
     <div class="hero__cta-group">
@@ -817,16 +837,16 @@
       <button class="btn-primary variant-c" onclick="openModal()" style="display:none">
         Kostenlos anfangen — 90-Tage-Paket danach 9,99 EUR.
       </button>
-      <span class="hero__micro">14 Tage gratis &middot; danach 9,99 EUR einmalig</span>
+      <span class="hero__micro">14 Tage kostenlos testen &middot; danach 9,99 EUR einmalig für 90 Tage &middot; Kein Abo</span>
     </div>
 
     <div class="hero__proof">
       <div class="hero__proof-dots" aria-hidden="true">
-        <div class="hero__proof-dot">BY</div>
-        <div class="hero__proof-dot">BW</div>
+        <div class="hero__proof-dot">DE</div>
+        <div class="hero__proof-dot">AT</div>
         <div class="hero__proof-dot">+</div>
       </div>
-      <span>Bereits von Physio-Azubis aus Bayern und Baden-Württemberg genutzt</span>
+      <span>Bereits von Physio-Azubis in Deutschland genutzt</span>
     </div>
   </div>
 </section>
@@ -861,6 +881,44 @@
   </div>
 </section>
 
+<!-- ─── Demo Section ──────────────────────────────────────────── -->
+<section class="demo-section" aria-labelledby="demo-heading">
+  <div class="container">
+    <div class="demo__label">KOSTENLOSES BEISPIEL</div>
+    <h2 id="demo-heading">Teste 2 echte Prüfungsfragen — ohne Anmeldung</h2>
+    <p>So lernt MicroSkills: Fallbeispiel, Frage, sofortiges Feedback auf Physio-Niveau.</p>
+    <!-- Frage 1 -->
+    <div class="demo__card" id="q1">
+      <p class="demo__scenario"><strong>Fall:</strong> Patient, 68 J., nach ischämischem Apoplex links, zeigt spastische Hemiparese rechts und Broca-Aphasie. Befunderhebung am 3. Tag auf Normalstation.</p>
+      <p class="demo__question">Welche Aussage zur Lähmungsform ist korrekt?</p>
+      <div class="demo__options" id="q1-options">
+        <button class="demo__option" onclick="checkAnswer(1, 'A', false)">A) Schlaffe Lähmung, da zentrales Motoneuron betroffen</button>
+        <button class="demo__option" onclick="checkAnswer(1, 'B', true)">B) Spastische Lähmung, da oberes Motoneuron (ZNS) betroffen</button>
+        <button class="demo__option" onclick="checkAnswer(1, 'C', false)">C) Periphere Parese, da Muskeltonus herabgesetzt</button>
+        <button class="demo__option" onclick="checkAnswer(1, 'D', false)">D) Keine Lähmung möglich bei ischämischem Infarkt</button>
+      </div>
+      <div class="demo__feedback" id="q1-feedback" style="display:none;"></div>
+    </div>
+    <!-- Frage 2 (erst sichtbar nach Frage 1) -->
+    <div class="demo__card" id="q2" style="display:none;">
+      <p class="demo__scenario"><strong>Fall:</strong> COPD-Patient (GOLD III), Atemfrequenz 24/min, setzt sich spontan in Vorneige mit Ellenbogen auf Oberschenkel abgestützt.</p>
+      <p class="demo__question">Wie heißt diese Haltung und warum hilft sie?</p>
+      <div class="demo__options" id="q2-options">
+        <button class="demo__option" onclick="checkAnswer(2, 'A', false)">A) Trendelenburg-Position — entlastet die Atemhilfsmuskulatur</button>
+        <button class="demo__option" onclick="checkAnswer(2, 'B', false)">B) Fowler-Lagerung — verbessert den venösen Rückfluss</button>
+        <button class="demo__option" onclick="checkAnswer(2, 'C', true)">C) Kutschersitz — fixiert den Schultergürtel als Atemhilfsmuskel-Widerlager</button>
+        <button class="demo__option" onclick="checkAnswer(2, 'D', false)">D) Bauchlage — verbessert den Gasaustausch bei ARDS</button>
+      </div>
+      <div class="demo__feedback" id="q2-feedback" style="display:none;"></div>
+    </div>
+    <!-- CTA nach Frage 2 -->
+    <div class="demo__cta" id="demo-cta" style="display:none;">
+      <p>Du hast beide Beispielfragen abgeschlossen.<br><strong>Weitere 40+ Fragen warten auf dich — 14 Tage kostenlos.</strong></p>
+      <button class="btn-primary" onclick="openModal()">Jetzt kostenlos starten</button>
+    </div>
+  </div>
+</section>
+
 <!-- ─── Features ─────────────────────────────────────────────── -->
 <section class="features" aria-labelledby="features-heading">
   <div class="container">
@@ -871,7 +929,7 @@
       <div class="feature-card">
         <div class="feature-card__icon" aria-hidden="true">&#127358;</div>
         <h3>Gezielte SKL-Inhalte</h3>
-        <p>Nur was in der PhysTh-APrV Fachgruppe 4 steht: Neurologie, Orthopädie, Innere Medizin, Anatomie — nichts, was nicht geprüft wird.</p>
+        <p>Nur was in der PhysTh-APrV Fachgruppe 4 steht: Innere Medizin, Chirurgie, Geriatrie, Arbeitsmedizin, Allgemeine Krankheitslehre — nichts, was nicht geprüft wird.</p>
       </div>
 
       <div class="feature-card">
@@ -942,7 +1000,7 @@
     <div class="social-proof__inner">
       <div class="social-proof__pill">
         <span class="dot" aria-hidden="true"></span>
-        Aktive Nutzer in Bayern &amp; BaWü
+        Aktive DACH-Azubis
       </div>
 
       <h2 id="proof-heading">6–10 Wochen vor der SKL-Prüfung zählt jede Stunde</h2>
@@ -976,7 +1034,7 @@
           Was kostet es nach dem Trial?
         </button>
         <div class="faq__a" role="region">
-          Einmalig 9,99 EUR für 90 Tage Vollzugang. Kein Abo, kein automatischer Einzug, keine versteckten Kosten. Du bezahlst einmal und hast 90 Tage Zugriff auf alle Inhalte.
+          14 Tage kostenlos testen — danach 9,99 EUR einmalig für 90 Tage. Kein Abo, kein automatischer Einzug, keine versteckten Kosten.
         </div>
       </div>
 
@@ -985,7 +1043,7 @@
           Welche Fächer sind enthalten?
         </button>
         <div class="faq__a" role="region">
-          Neurologie, Orthopädie, Innere Medizin — die Kernfächer der SKL-Prüfung, ausgerichtet an der PhysTh-APrV Fachgruppe 4. Kein Stoff, der nicht geprüft wird.
+          Innere Medizin, Chirurgie, Geriatrie, Arbeitsmedizin, Allgemeine Krankheitslehre — die Kernfächer der SKL-Prüfung, ausgerichtet an der PhysTh-APrV. Kein Stoff, der nicht geprüft wird.
         </div>
       </div>
     </div>
@@ -996,7 +1054,7 @@
 <section class="footer-cta" aria-labelledby="footer-cta-heading">
   <div class="container">
     <h2 id="footer-cta-heading">Weißt du, was in deiner SKL-Prüfung kommt? Jetzt schon.</h2>
-    <p>14 Tage gratis testen. Kein Abo. Kein Risiko. Nur das, was wirklich geprüft wird.</p>
+    <p>14 Tage kostenlos testen — danach 9,99 EUR einmalig für 90 Tage. Kein Abo. Kein Risiko.</p>
     <button class="btn-primary btn-primary--light" onclick="openModal()">
       Jetzt kostenlos starten
     </button>
@@ -1182,6 +1240,51 @@
 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  // ─── Demo Quiz ───────────────────────────────────────────────
+  function checkAnswer(qNum, selected, isCorrect) {
+    var card = document.getElementById('q' + qNum);
+    var options = card.querySelectorAll('.demo__option');
+    var feedback = document.getElementById('q' + qNum + '-feedback');
+
+    options.forEach(function(btn) { btn.disabled = true; });
+
+    var feedbacks = {
+      '1B': { cls: 'correct', text: '\u2713 Richtig! Apoplex sch\u00e4digt das obere Motoneuron (Pyramidenbahn). Folge: spastische L\u00e4hmung mit erh\u00f6htem Muskeltonus, Hyperreflexie, positivem Babinski. Merke: Zentral = spastisch, peripher = schlaff.' },
+      '1A': { cls: 'wrong', text: '\u2717 Falsch. Schlaffe L\u00e4hmung entsteht bei Sch\u00e4digung des unteren Motoneurons (periphere L\u00e4hmung). Der Apoplex betrifft das ZNS (oberes Motoneuron) \u2192 spastische L\u00e4hmung.' },
+      '1C': { cls: 'wrong', text: '\u2717 Falsch. Herabgesetzter Tonus = periphere Parese (unteres Motoneuron). Bei Apoplex (ZNS) \u2192 spastische L\u00e4hmung mit erh\u00f6htem Tonus.' },
+      '1D': { cls: 'wrong', text: '\u2717 Falsch. Isch\u00e4mischer Infarkt zerst\u00f6rt Hirngewebe \u2192 Motorik ausf\u00e4lle sind typische Folge.' },
+      '2C': { cls: 'correct', text: '\u2713 Richtig! Der Kutschersitz fixiert den Schulterg\u00fcrtel am Femur. Atemhilfsmuskeln (M. pectoralis minor, Mm. scaleni) k\u00f6nnen sich so am fixierten Schulterg\u00fcrtel abst\u00fctzen und effizienter heben \u2192 Thoraxweitung erleichtert.' },
+      '2A': { cls: 'wrong', text: '\u2717 Falsch. Trendelenburg = Kopftieflagerung. Beim COPD-Patienten kontraproduktiv (Zwerchfell wird durch Eingeweide belastet).' },
+      '2B': { cls: 'wrong', text: '\u2717 Falsch. Fowler = Oberk\u00f6rper hochgelagert. Hat nicht denselben Effekt auf die Atemhilfsmuskulatur wie der Kutschersitz.' },
+      '2D': { cls: 'wrong', text: '\u2717 Falsch. Bauchlage (Prone Position) bei ARDS, nicht COPD-Exazerbation.' }
+    };
+
+    var key = qNum + selected;
+    var fb = feedbacks[key] || { cls: isCorrect ? 'correct' : 'wrong', text: isCorrect ? '\u2713 Richtig!' : '\u2717 Falsch.' };
+
+    options.forEach(function(btn) {
+      if (btn.textContent.charAt(0) === selected) btn.classList.add(isCorrect ? 'correct' : 'wrong');
+      if (!isCorrect && btn.getAttribute('onclick').indexOf('true') !== -1) btn.classList.add('correct');
+    });
+
+    feedback.className = 'demo__feedback ' + fb.cls;
+    feedback.textContent = fb.text;
+    feedback.style.display = 'block';
+
+    if (qNum === 1) {
+      setTimeout(function() {
+        document.getElementById('q2').style.display = 'block';
+        document.getElementById('q2').scrollIntoView({behavior: 'smooth', block: 'nearest'});
+      }, 800);
+    }
+    if (qNum === 2) {
+      setTimeout(function() {
+        document.getElementById('demo-cta').style.display = 'block';
+        document.getElementById('demo-cta').scrollIntoView({behavior: 'smooth', block: 'nearest'});
+      }, 800);
+    }
   }
 
   // ─── FAQ Accordion ───────────────────────────────────────────
