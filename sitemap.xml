@@ -60,4 +60,25 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://microskills.docmoritz.academy/geriatrie-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/arbeitsmedizin-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/allgemeine-krankheitslehre-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

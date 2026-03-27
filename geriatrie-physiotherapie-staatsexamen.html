@@ -73,6 +73,56 @@
   }
   </script>
 
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Welche Geriatrie-Themen kommen im Physio-Staatsexamen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Im Physio-Staatsexamen (PhysTh-APrV) sind die häufigsten Geriatrie-Themen: Sturzprävention mit dem Timed Up and Go Test (TUG-Grenzwert 12 Sekunden), Sarkopenie-Diagnostik nach EWGSOP2 (reduzierte Muskelmasse + verminderte Muskelkraft), Demenz mit MMSE-Screening, Multimorbidität und Polypharmazie sowie Dekubitusprophylaxe. Diese fünf Themenblöcke decken den Großteil der Geriatrie-Prüfungsaufgaben ab."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der TUG-Test-Grenzwert für Sturzrisiko im Staatsexamen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Timed Up and Go Test (TUG) bewertet das Sturzrisiko anhand der Zeit, die ein Patient zum Aufstehen vom Stuhl, Gehen von 3 Metern, Umdrehen und Zurücksetzen benötigt. Im Staatsexamen gilt: unter 10 Sekunden = unauffällig; ab 12 Sekunden = erhöhtes Sturzrisiko; über 20 Sekunden = hohes Sturzrisiko. Merkhilfe: 'Unter 10 ist top, ab 12 droht Hop.' Der Test erfasst Transfers (Aufstehen, Hinsetzen), Ganggeschwindigkeit und Richtungswechsel — nicht nur die reine Gehgeschwindigkeit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie wird Sarkopenie nach EWGSOP2 diagnostiziert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Sarkopenie-Diagnose nach EWGSOP2 (2019) erfordert zwingend eine verminderte Muskelkraft (z.B. Handkraft unter 27 kg bei Männern, unter 16 kg bei Frauen) als primäres Kriterium. Zusätzlich bestätigt eine reduzierte Muskelmasse (per DXA oder BIA gemessen) die Diagnose. Die Ganggeschwindigkeit unter 0,8 m/s gilt als Marker für schwere Sarkopenie. Entscheidend im Staatsexamen: Muskelmasse allein reicht nicht — reduzierte Muskelkraft ist das Eingangs-Kriterium."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was unterscheidet Sarkopenie von Frailty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sarkopenie beschreibt den altersbedingten Verlust von Muskelmasse und Muskelkraft — ein messbarer, organbezogener Befund. Frailty (Gebrechlichkeit) ist ein umfassenderes geriatrisches Syndrom mit fünf Fried-Kriterien: Gewichtsverlust, Erschöpfung, niedrige körperliche Aktivität, verlangsamtes Gehen und verringerte Handkraft. Sarkopenie kann Bestandteil von Frailty sein, ist aber nicht gleichbedeutend damit. Beide erhöhen Sturz- und Pflegeheimrisiko."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche physiotherapeutischen Maßnahmen bei Multimorbidität und Polypharmazie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei geriatrischen Patienten mit Multimorbidität (5+ Erkrankungen) und Polypharmazie (5+ Medikamente täglich) sind folgende physiotherapeutische Besonderheiten relevant: Schleifendiuretika und Antihypertensiva erhöhen das Sturzrisiko durch orthostatische Hypotonie (langsam aufstehen, vor dem Gehen kurz stehen bleiben). Sedativa und Schlafmittel beeinflussen Gleichgewicht und Reaktionszeit. Antikoagulantien erfordern Vorsicht bei Kontakttherapie. Bei geriatrischen Patienten immer Vital-Parameter vor der Behandlung prüfen und Belastungsgrenzen individuell anpassen."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     /* ─── Reset & Base ─────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -947,7 +997,7 @@
     .modal__success h3 { font-size: 1.2rem; margin-bottom: 8px; }
     .modal__success p { color: var(--text-muted); font-size: 0.9rem; }
   </style>
-  <script defer data-domain="microskills.docmoritz.academy" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="microskills.docmoritz.academy" src="https://analytics.docmoritz.academy/js/script.js"></script>
 </head>
 <body>
 

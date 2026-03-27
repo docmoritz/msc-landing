@@ -73,6 +73,56 @@
   }
   </script>
 
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Welche Arbeitsmedizin-Themen kommen im Physio-Staatsexamen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Im Physio-Staatsexamen (PhysTh-APrV) sind die häufigsten Arbeitsmedizin-Themen: Berufskrankheiten mit BK-Nummern (Lärmschwerhörigkeit BK 2301, Silikose BK 4101, Asbestose BK 4103), der Unterschied zwischen Arbeitsunfall und Berufskrankheit, Ergonomie am Arbeitsplatz (Hebetechniken, Bildschirmarbeitsplatz), sowie berufliche Rehabilitation. Die BK-Nummern 2301 und 4101 sind die am häufigsten geprüften."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der Unterschied zwischen Arbeitsunfall und Berufskrankheit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ein Arbeitsunfall ist ein plötzliches, zeitlich begrenztes Ereignis bei der Arbeit (z.B. Sturz von der Leiter) mit sofort erkennbarer Schädigung. Eine Berufskrankheit entsteht durch langfristige, wiederholte Einwirkung arbeitsbedingter Faktoren (z.B. jahrelanger Lärm, Staubexposition) und ist in der Berufskrankheitenliste (BK-Liste) der DGUV verzeichnet. Entscheidend im Staatsexamen: Bei der Berufskrankheit muss ein ursächlicher Zusammenhang zwischen beruflicher Exposition und Erkrankung nachgewiesen werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche BK-Nummern muss ich als Physio-Azubi kennen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die wichtigsten BK-Nummern im Staatsexamen sind: BK 2301 — Lärmschwerhörigkeit (häufigste anerkannte Berufskrankheit in Deutschland, betrifft Metallarbeiter, Musiker, Bauarbeiter; Schallpegel ab 85 dB dauerhaft schädigend); BK 4101 — Silikose (Quarzstaublungenerkrankung, betrifft Bergleute, Steinmetze, Gießereiarbeiter; irreversibel, fibrotisch); BK 4103 — Asbestose (Asbeststaubexposition, betrifft Bau- und Werftarbeiter; erhöhtes Mesotheliom-Risiko). Alle drei sind arbeitshygienisch präventiv, nicht kurativ."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was sind die ergonomischen Grundprinzipien für Physiotherapeuten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Physiotherapeuten sind selbst gefährdet durch Berufskrankheiten des Bewegungsapparats. Ergonomische Grundprinzipien: Rückengerechtes Heben — Rücken gerade, Knie beugen, Last körpernah halten, Drehbewegungen vermeiden; höhenverstellbare Behandlungsliegen auf Hüfthöhe einstellen; Anti-Ermüdungsmatten bei langem Stehen; Kraftaufwand durch Körpergewichtsverlagerung statt Muskelkraft. Im Staatsexamen kommt häufig die Frage, welche Körperhaltung bei Transferhilfen das LWS-Risiko minimiert."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie läuft die berufliche Rehabilitation nach Berufskrankheit ab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei anerkannter Berufskrankheit ist die Deutsche Gesetzliche Unfallversicherung (DGUV) zuständig — nicht die Krankenkasse. Die Reha-Kette: Berufskrankheits-Meldung durch Arzt → DGUV-Prüfung → medizinische Rehabilitation (Physiotherapie, Ergotherapie) → berufliche Wiedereingliederung (stufenweise nach Hamburger Modell) → ggf. Umschulung bei dauerhafter Berufsunfähigkeit. Der Unterschied zur gesetzlichen Krankenversicherung ist prüfungsrelevant: DGUV übernimmt alle Kosten ohne Eigenanteil."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -241,7 +291,7 @@
     .modal__success h3 { font-size: 1.2rem; margin-bottom: 8px; }
     .modal__success p { color: var(--text-muted); font-size: 0.9rem; }
   </style>
-  <script defer data-domain="microskills.docmoritz.academy" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="microskills.docmoritz.academy" src="https://analytics.docmoritz.academy/js/script.js"></script>
 </head>
 <body>
 
