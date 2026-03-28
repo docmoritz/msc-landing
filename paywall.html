@@ -570,7 +570,7 @@
         clearError();
         setLoading(true);
 
-        fetch('/api/payment/create-checkout', {
+        fetch('https://gate.docmoritz.academy/api/payment/create-checkout', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

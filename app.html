@@ -713,7 +713,7 @@
       }
 
       /* 3. API-Status prüfen */
-      fetch('/api/trial/status', {
+      fetch('https://gate.docmoritz.academy/api/trial/status', {
         method: 'GET',
         headers: {
           'Authorization': 'Bearer ' + token,
@@ -747,7 +747,7 @@
     }
 
     /* ─── H5P Embed ─────────────────────────────────────────── */
-    var H5P_BASE_URL = '/h5p-player/';
+    var H5P_BASE_URL = 'https://gate.docmoritz.academy/h5p-player/';
     var H5P_CHECK_TIMEOUT = 6000; /* ms bis Unavailable-Fallback */
 
     var h5pLabels = {
