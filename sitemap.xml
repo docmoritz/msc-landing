@@ -218,4 +218,41 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Logopädie Hub -->
+  <url>
+    <loc>https://microskills.docmoritz.academy/logopaedie-lernguide</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Logopädie Pillar Pages -->
+  <url>
+    <loc>https://microskills.docmoritz.academy/dysphagie-logopaedie-staatsexamen</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/aphasie-logopaedie-staatsexamen</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/stimmtherapie-logopaedie-staatsexamen</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/sprachentwicklung-logopaedie-staatsexamen</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
