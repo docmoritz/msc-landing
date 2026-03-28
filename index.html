@@ -890,16 +890,16 @@
     <h2 id="pain-heading">Prüfungsstoff, der sich nicht wie Lernen anfühlt</h2>
 
     <p class="pain__text">
-      Neuronale Bahnen, Parkinson-Kardinalsymptome, Babinski-Reflex, McMurray-Test, COPD vs. Asthma — das sind die SKL-Themen, die in deiner mündlichen Staatsexamen-Prüfung abgefragt werden. MicroSkills gibt dir genau diese Themen in 10-Minuten-Einheiten, die du mit Fallbeispielen übst — nicht als Lesetext, den du zwei Tage später wieder vergessen hast.
+      Herzinsuffizienz-Stadien, Schockformen, Frakturheilung, McMurray-Test, COPD vs. Asthma — das sind die SKL-Themen, die in deiner mündlichen Staatsexamen-Prüfung abgefragt werden. MicroSkills gibt dir genau diese Themen in 10-Minuten-Einheiten, die du mit Fallbeispielen übst — nicht als Lesetext, den du zwei Tage später wieder vergessen hast.
     </p>
 
     <div class="pain__keywords" aria-label="Relevante Prüfungsthemen">
-      <span class="pain__tag">Neuronale Bahnen</span>
-      <span class="pain__tag">Parkinson</span>
-      <span class="pain__tag">Babinski-Reflex</span>
+      <span class="pain__tag">Herzinsuffizienz-Stadien</span>
+      <span class="pain__tag">Schockformen</span>
+      <span class="pain__tag">Frakturheilung</span>
       <span class="pain__tag">McMurray-Test</span>
       <span class="pain__tag">COPD vs. Asthma</span>
-      <span class="pain__tag">Schlaganfall</span>
+      <span class="pain__tag">Osteoporose</span>
       <span class="pain__tag">Meniskus-Läsionen</span>
       <span class="pain__tag">Herzinsuffizienz</span>
     </div>
@@ -914,13 +914,13 @@
     <p>So lernt MicroSkills: Fallbeispiel, Frage, sofortiges Feedback auf Physio-Niveau.</p>
     <!-- Frage 1 -->
     <div class="demo__card" id="q1">
-      <p class="demo__scenario"><strong>Fall:</strong> Patient, 68 J., nach ischämischem Apoplex links, zeigt spastische Hemiparese rechts und Broca-Aphasie. Befunderhebung am 3. Tag auf Normalstation.</p>
-      <p class="demo__question">Welche Aussage zur Lähmungsform ist korrekt?</p>
+      <p class="demo__scenario"><strong>Fall:</strong> Patient, 72 J., berichtet über Dyspnoe beim Treppensteigen (2 Etagen), keine Beschwerden in Ruhe, beidseitige Knöchelödeme. Kardiologischer Befund: Herzinsuffizienz.</p>
+      <p class="demo__question">Welchem NYHA-Stadium entspricht dieser Befund?</p>
       <div class="demo__options" id="q1-options">
-        <button class="demo__option" onclick="checkAnswer(1, 'A', false)">A) Schlaffe Lähmung, da zentrales Motoneuron betroffen</button>
-        <button class="demo__option" onclick="checkAnswer(1, 'B', true)">B) Spastische Lähmung, da oberes Motoneuron (ZNS) betroffen</button>
-        <button class="demo__option" onclick="checkAnswer(1, 'C', false)">C) Periphere Parese, da Muskeltonus herabgesetzt</button>
-        <button class="demo__option" onclick="checkAnswer(1, 'D', false)">D) Keine Lähmung möglich bei ischämischem Infarkt</button>
+        <button class="demo__option" onclick="checkAnswer(1, 'A', false)">A) NYHA I — keine Beschwerden bei normaler körperlicher Belastung</button>
+        <button class="demo__option" onclick="checkAnswer(1, 'B', true)">B) NYHA II — Beschwerden bei mittlerer körperlicher Belastung</button>
+        <button class="demo__option" onclick="checkAnswer(1, 'C', false)">C) NYHA III — Beschwerden bereits bei leichter Belastung</button>
+        <button class="demo__option" onclick="checkAnswer(1, 'D', false)">D) NYHA IV — Beschwerden in Ruhe</button>
       </div>
       <div class="demo__feedback" id="q1-feedback" style="display:none;"></div>
     </div>
@@ -1276,10 +1276,10 @@
     options.forEach(function(btn) { btn.disabled = true; });
 
     var feedbacks = {
-      '1B': { cls: 'correct', text: '\u2713 Richtig! Apoplex sch\u00e4digt das obere Motoneuron (Pyramidenbahn). Folge: spastische L\u00e4hmung mit erh\u00f6htem Muskeltonus, Hyperreflexie, positivem Babinski. Merke: Zentral = spastisch, peripher = schlaff.' },
-      '1A': { cls: 'wrong', text: '\u2717 Falsch. Schlaffe L\u00e4hmung entsteht bei Sch\u00e4digung des unteren Motoneurons (periphere L\u00e4hmung). Der Apoplex betrifft das ZNS (oberes Motoneuron) \u2192 spastische L\u00e4hmung.' },
-      '1C': { cls: 'wrong', text: '\u2717 Falsch. Herabgesetzter Tonus = periphere Parese (unteres Motoneuron). Bei Apoplex (ZNS) \u2192 spastische L\u00e4hmung mit erh\u00f6htem Tonus.' },
-      '1D': { cls: 'wrong', text: '\u2717 Falsch. Isch\u00e4mischer Infarkt zerst\u00f6rt Hirngewebe \u2192 Motorik ausf\u00e4lle sind typische Folge.' },
+      '1B': { cls: 'correct', text: '\u2713 Richtig! NYHA II: Beschwerden bei mittlerer k\u00f6rperlicher Belastung (z.\u00a0B. Treppensteigen), keine Ruhedyspnoe. Merke: NYHA I = beschwerdefrei, NYHA II = mittlere Belastung, NYHA III = leichte Belastung, NYHA IV = Ruhedyspnoe.' },
+      '1A': { cls: 'wrong', text: '\u2717 Falsch. NYHA I bedeutet \u00fcberhaupt keine Beschwerden bei normaler k\u00f6rperlicher Aktivit\u00e4t. Dieser Patient hat bereits Dyspnoe beim Treppensteigen \u2192 NYHA II.' },
+      '1C': { cls: 'wrong', text: '\u2717 Falsch. NYHA III beschreibt Beschwerden schon bei leichter Belastung (z.\u00a0B. ebener Weg). Treppensteigen ist mittlere Belastung \u2192 NYHA II.' },
+      '1D': { cls: 'wrong', text: '\u2717 Falsch. NYHA IV bedeutet Dyspnoe in Ruhe oder bei minimaler Aktivit\u00e4t. Dieser Patient ist in Ruhe beschwerdefrei \u2192 NYHA II.' },
       '2C': { cls: 'correct', text: '\u2713 Richtig! Der Kutschersitz fixiert den Schulterg\u00fcrtel am Femur. Atemhilfsmuskeln (M. pectoralis minor, Mm. scaleni) k\u00f6nnen sich so am fixierten Schulterg\u00fcrtel abst\u00fctzen und effizienter heben \u2192 Thoraxweitung erleichtert.' },
       '2A': { cls: 'wrong', text: '\u2717 Falsch. Trendelenburg = Kopftieflagerung. Beim COPD-Patienten kontraproduktiv (Zwerchfell wird durch Eingeweide belastet).' },
       '2B': { cls: 'wrong', text: '\u2717 Falsch. Fowler = Oberk\u00f6rper hochgelagert. Hat nicht denselben Effekt auf die Atemhilfsmuskulatur wie der Kutschersitz.' },
