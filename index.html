@@ -928,6 +928,7 @@
 <nav class="nav" aria-label="Hauptnavigation">
   <div class="nav__inner">
     <span class="nav__logo">Micro<span>Skills</span></span>
+    <a id="nav-app-link" href="/app" class="nav__cta" style="display:none;text-decoration:none" aria-label="Zur App">Zur App →</a>
     <button class="nav__cta" onclick="openModal()" aria-label="Kostenlos starten">
       Kostenlos starten
     </button>
@@ -1367,8 +1368,11 @@
 
     <div class="modal__success" id="modal-success-view">
       <div class="modal__success-icon" aria-hidden="true">&#10003;</div>
-      <h3>Zugang angefordert!</h3>
-      <p>Wir schicken dir den Zugangslink in den naechsten Minuten an deine E-Mail-Adresse. Schau auch im Spam-Ordner nach.</p>
+      <h3>Zugang aktiv!</h3>
+      <p>Du kannst sofort starten. Wir schicken dir ausserdem den Zugangslink per E-Mail.</p>
+      <p style="text-align:center;margin:24px 0 8px">
+        <a id="modal-app-link" href="/app" style="background:#4B89DC;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block">Jetzt starten →</a>
+      </p>
     </div>
   </div>
 </div>
@@ -1469,12 +1473,13 @@
         if (data.trial_token) {
           sessionStorage.setItem('trial_token', data.trial_token);
           sessionStorage.setItem('trial_ends_at', data.trial_ends_at);
+          var appLink = document.getElementById('modal-app-link');
+          if (appLink) appLink.href = '/app?token=' + encodeURIComponent(data.trial_token);
         }
         document.getElementById('modal-form-view').style.display = 'none';
         document.getElementById('modal-success-view').style.display = 'block';
       })
       .catch(function (err) {
-        // Fallback: Erfolg anzeigen (API noch nicht deployed)
         console.warn('API nicht erreichbar, Fallback:', err.message);
         document.getElementById('modal-form-view').style.display = 'none';
         document.getElementById('modal-success-view').style.display = 'block';
@@ -1545,6 +1550,18 @@
       btn.setAttribute('aria-expanded', 'true');
     }
   }
+
+  // ─── Returning User: show App link if token in sessionStorage ─
+  (function () {
+    var token = sessionStorage.getItem('trial_token');
+    if (token) {
+      var navLink = document.getElementById('nav-app-link');
+      if (navLink) {
+        navLink.href = '/app?token=' + encodeURIComponent(token);
+        navLink.style.display = '';
+      }
+    }
+  })();
 </script>
 
 </body>
