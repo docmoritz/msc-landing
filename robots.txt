@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Private app pages — no indexing
+Disallow: /app
+Disallow: /app.html
+Disallow: /paywall
+Disallow: /paywall.html
+Disallow: /success
+Disallow: /success.html
+
+Sitemap: https://microskills.docmoritz.academy/sitemap.xml

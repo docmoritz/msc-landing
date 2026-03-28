@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Landing Page / Homepage -->
+  <url>
+    <loc>https://microskills.docmoritz.academy/</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- SKL Hub -->
+  <url>
+    <loc>https://microskills.docmoritz.academy/spezielle-krankheitslehre-physiotherapie-lernguide</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- SEO Pillar Pages -->
+  <url>
+    <loc>https://microskills.docmoritz.academy/neurologie-physiotherapie-pruefung</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/orthopaedie-befunderhebung-staatsexamen</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/innere-medizin-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/paediatrie-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/chirurgie-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/gynaekologie-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/geriatrie-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/arbeitsmedizin-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://microskills.docmoritz.academy/allgemeine-krankheitslehre-physiotherapie-staatsexamen</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

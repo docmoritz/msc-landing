@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vollzugang freischalten — MicroSkills SKL</title>
+  <meta name="description" content="Dein 14-Tage-Trial ist abgelaufen. Sichere dir jetzt vollen Zugriff auf alle SKL-Module für 9,99 € / 90 Tage." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito:wght@600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.svg" sizes="any" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:       #EDAD47;
+      --green-dark:   #4B89DC;
+      --green-mid:    #7AAEE8;
+      --green-light:  #D6E8FA;
+      --green-xlight: #EEF5FC;
+      --bg:           #F5F8FD;
+      --text:         #1A1A1A;
+      --text-muted:   #5A6A82;
+      --border:       #C6D9F0;
+      --white:        #FFFFFF;
+      --shadow-sm:    0 1px 4px rgba(75,137,220,0.08);
+      --shadow-md:    0 4px 20px rgba(75,137,220,0.12);
+      --radius:       10px;
+      --radius-lg:    16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    a { color: var(--green-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    img { max-width: 100%; display: block; }
+
+    /* ─── Layout ───────────────────────────────────────────── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ─── Nav ──────────────────────────────────────────────── */
+    .nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .nav__logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .nav__logo span {
+      color: var(--green-mid);
+    }
+
+    /* ─── Hero ─────────────────────────────────────────────── */
+    .hero {
+      background: var(--bg);
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFF3E0;
+      color: #E65100;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.65rem, 4vw, 2.4rem);
+      color: var(--text);
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero__sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── Pricing Section ──────────────────────────────────── */
+    .pricing {
+      padding: 0 0 72px;
+    }
+
+    .pricing__card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 36px 32px 32px;
+    }
+
+    .pricing__badge {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .pricing__name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .pricing__amount {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .pricing__currency {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .pricing__number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .pricing__period {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .pricing__divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+
+    .pricing__features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .pricing__features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .pricing__check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--green-light);
+      color: var(--green-mid);
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    /* ─── CTA Button ───────────────────────────────────────── */
+    .btn-cta {
+      display: block;
+      width: 100%;
+      background: var(--green-dark);
+      color: var(--white);
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 24px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.12s ease;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .btn-cta:hover:not(:disabled) {
+      background: #2E6AB8;
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .btn-cta:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-cta:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .btn-cta--loading {
+      position: relative;
+    }
+
+    .payment-meta {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .payment-error {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.83rem;
+      color: #C62828;
+      background: #FFEBEE;
+      border: 1px solid #FFCDD2;
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      line-height: 1.45;
+    }
+
+    .payment-error.visible {
+      display: block;
+    }
+
+    /* ─── Testimonial ──────────────────────────────────────── */
+    .testimonial {
+      padding: 0 0 80px;
+    }
+
+    .testimonial__box {
+      background: var(--green-xlight);
+      border-left: 3px solid var(--green-mid);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 24px 28px;
+    }
+
+    .testimonial__quote {
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .testimonial__author {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ─── Footer ───────────────────────────────────────────── */
+    .footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+    }
+
+    .footer__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .footer__copy {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer__links a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      transition: color 0.15s ease;
+    }
+
+    .footer__links a:hover {
+      color: var(--green-dark);
+      text-decoration: none;
+    }
+
+    /* ─── Responsive ───────────────────────────────────────── */
+    @media (max-width: 520px) {
+      .pricing__card {
+        padding: 28px 20px 24px;
+      }
+
+      .pricing__number {
+        font-size: 2.6rem;
+      }
+
+      .hero {
+        padding: 52px 0 44px;
+      }
+
+      .testimonial__box {
+        padding: 20px 18px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <script defer data-domain="microskills.docmoritz.academy" src="https://analytics.docmoritz.academy/js/script.js"></script>
+</head>
+<body>
+
+  <!-- ─── Nav ─────────────────────────────────────────────── -->
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="MicroSkills Startseite">Micro<span>Skills</span></a>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ─────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="hero__badge" role="status" aria-label="Hinweis: Trial abgelaufen">
+        &#9200; TRIAL ABGELAUFEN
+      </div>
+      <h1 id="hero-heading">Dein 14-Tage-Trial ist abgelaufen.</h1>
+      <p class="hero__sub">
+        Du hast die Grundlage gelegt — jetzt fehlt nur noch der Abschluss.
+        Sichere dir vollen Zugriff für die letzten Wochen vor deiner Prüfung.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Pricing ───────────────────────────────────────────── -->
+  <section class="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="pricing__card">
+        <div class="pricing__badge">Beliebteste Wahl</div>
+
+        <div class="pricing__name" id="pricing-heading">MicroSkills SKL-Vollzugang</div>
+
+        <div class="pricing__amount" aria-label="Preis: 9,99 Euro">
+          <span class="pricing__currency">9,</span>
+          <span class="pricing__number">99&thinsp;<span style="font-size:1.8rem;">€</span></span>
+        </div>
+        <p class="pricing__period">/ 90 Tage &middot; einmalig &middot; keine Kündigung nötig</p>
+
+        <hr class="pricing__divider" />
+
+        <ul class="pricing__features" aria-label="Leistungsumfang">
+          <li>
+            <span class="pricing__check" aria-hidden="true">&#10003;</span>
+            <span>Alle SKL-Module: Neurologie, Orthopädie, Innere Medizin + mehr</span>
+          </li>
+          <li>
+            <span class="pricing__check" aria-hidden="true">&#10003;</span>
+            <span>Fallvignetten mit sofortigem Feedback</span>
+          </li>
+          <li>
+            <span class="pricing__check" aria-hidden="true">&#10003;</span>
+            <span>10-Minuten-Einheiten — passt in jede Pause</span>
+          </li>
+          <li>
+            <span class="pricing__check" aria-hidden="true">&#10003;</span>
+            <span>Prüfungsniveau PhysTh-APrV — nicht Medizinstudium</span>
+          </li>
+          <li>
+            <span class="pricing__check" aria-hidden="true">&#10003;</span>
+            <span>Bis zu 90 Tage Zugriff — ideal für die Prüfungsphase</span>
+          </li>
+        </ul>
+
+        <button
+          class="btn-cta"
+          id="checkout-btn"
+          type="button"
+          aria-live="polite"
+        >
+          Jetzt für 9,99&nbsp;€ freischalten
+        </button>
+
+        <div class="payment-error" id="payment-error" role="alert" aria-live="assertive"></div>
+
+        <p class="payment-meta">&#128274; Sicher bezahlen via Stripe &middot; DSGVO-konform</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonial ───────────────────────────────────────── -->
+  <section class="testimonial" aria-labelledby="testimonial-heading">
+    <div class="container">
+      <h2 id="testimonial-heading" class="sr-only">Erfahrungsbericht</h2>
+      <blockquote class="testimonial__box">
+        <p class="testimonial__quote">
+          "Die Fallvignetten haben mir endlich geholfen zu verstehen, wann ich den Arzt rufen muss —
+          und wann nicht. Genau das kam in der Prüfung dran."
+        </p>
+        <footer class="testimonial__author">
+          Lisa M., Physio-Auszubildende, Bayern
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ─── Footer ───────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 MicroSkills. Alle Rechte vorbehalten.</p>
+      <nav class="footer__links" aria-label="Rechtliche Links">
+        <a href="/agb">AGB</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/impressum">Impressum</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ─── Screen-reader utility ────────────────────────────── -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <!-- ─── JavaScript ────────────────────────────────────────── -->
+  <script>
+    (function () {
+      'use strict';
+
+      var btn = document.getElementById('checkout-btn');
+      var errorBox = document.getElementById('payment-error');
+
+      /* ── 1. Token resolution ───────────────────────────── */
+      function getToken() {
+        var fromSession = sessionStorage.getItem('trial_token');
+        if (fromSession) return fromSession;
+
+        var params = new URLSearchParams(window.location.search);
+        var fromUrl = params.get('token');
+        if (fromUrl) {
+          try { sessionStorage.setItem('trial_token', fromUrl); } catch (e) { /* ignore */ }
+          return fromUrl;
+        }
+
+        return null;
+      }
+
+      var token = getToken();
+
+      /* ── 2. No-token fallback ──────────────────────────── */
+      if (!token) {
+        btn.textContent = 'Registrieren';
+        btn.addEventListener('click', function () {
+          window.location.href = '/#email-gate';
+        });
+        return; /* skip checkout logic */
+      }
+
+      /* ── 3. Show/hide error ────────────────────────────── */
+      function showError(msg) {
+        errorBox.textContent = msg;
+        errorBox.classList.add('visible');
+      }
+
+      function clearError() {
+        errorBox.textContent = '';
+        errorBox.classList.remove('visible');
+      }
+
+      /* ── 4. Set loading state ──────────────────────────── */
+      function setLoading(loading) {
+        btn.disabled = loading;
+        btn.textContent = loading ? 'Wird geladen\u2026' : 'Jetzt f\u00fcr 9,99\u00a0\u20ac freischalten';
+        btn.classList.toggle('btn-cta--loading', loading);
+      }
+
+      /* ── 5. Checkout on click ──────────────────────────── */
+      btn.addEventListener('click', function () {
+        clearError();
+        setLoading(true);
+
+        fetch('/api/payment/create-checkout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          body: JSON.stringify({})
+        })
+        .then(function (res) {
+          if (res.status === 401) {
+            return res.json().then(function () {
+              throw new Error('Deine Sitzung ist abgelaufen. Bitte melde dich erneut an.');
+            }).catch(function () {
+              throw new Error('Deine Sitzung ist abgelaufen. Bitte melde dich erneut an.');
+            });
+          }
+          if (!res.ok) {
+            return res.json().then(function (data) {
+              throw new Error(data.message || 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.');
+            }).catch(function () {
+              throw new Error('Ein Fehler ist aufgetreten (Fehlercode ' + res.status + '). Bitte versuche es erneut.');
+            });
+          }
+          return res.json();
+        })
+        .then(function (data) {
+          if (!data.checkout_url) {
+            throw new Error('Keine Weiterleitungs-URL erhalten. Bitte wende dich an den Support.');
+          }
+          window.location.href = data.checkout_url;
+        })
+        .catch(function (err) {
+          setLoading(false);
+          showError(err.message || 'Unbekannter Fehler. Bitte versuche es erneut.');
+        });
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
