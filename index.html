@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SKL Physiotherapie Staatsexamen — Prüfung 2025 | MicroSkills</title>
-  <meta name="description" content="SKL-Prüfungsvorbereitung für Physio-Azubis J2: Innere Medizin, Chirurgie, Geriatrie, Orthopädie — 10-Minuten-Einheiten auf Prüfungsniveau. Kostenlos starten." />
-  <meta name="keywords" content="Spezielle Krankheitslehre Physiotherapie, SKL Staatsexamen, Physio Azubi Prüfungsvorbereitung, PhysTh-APrV, Innere Medizin Chirurgie Geriatrie Arbeitsmedizin Allgemeine Krankheitslehre Physiotherapie" />
+  <title>SKL-Prüfungsvorbereitung Physiotherapie, Ergotherapie &amp; Pflege | MicroSkills</title>
+  <meta name="description" content="MicroSkills — SKL-Prüfungsvorbereitung für Physiotherapie, Ergotherapie und Pflege-Azubis: Innere Medizin, Chirurgie, Neurologie, Psychiatrie — 10-Minuten-Einheiten auf Prüfungsniveau. Kostenlos starten." />
+  <meta name="keywords" content="Spezielle Krankheitslehre Physiotherapie, SKL Staatsexamen, Physio Azubi Prüfungsvorbereitung, PhysTh-APrV, Innere Medizin Chirurgie Geriatrie Arbeitsmedizin Allgemeine Krankheitslehre Physiotherapie, Ergotherapie Staatsexamen, ErgThAPrV, Pflege Staatsexamen, PflApprO 2020" />
   <meta property="og:title" content="Spezielle Krankheitslehre Physiotherapie — MicroSkills" />
   <meta property="og:description" content="SKL-Prüfungsvorbereitung im Mikroformat für Physio-Azubis. 10-Minuten-Einheiten, Fallbeispiele, sofortiges Feedback." />
   <meta property="og:type" content="website" />
@@ -26,7 +26,7 @@
     "@type": "WebSite",
     "name": "MicroSkills",
     "url": "https://microskills.docmoritz.academy",
-    "description": "SKL-Prüfungsvorbereitung für Physio-Azubis",
+    "description": "SKL-Prüfungsvorbereitung für Physiotherapie, Ergotherapie und Pflege — medizinische Berufsausbildung im DACH-Raum",
     "inLanguage": "de"
   }
   </script>
@@ -71,6 +71,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Innere Medizin, Chirurgie, Geriatrie, Arbeitsmedizin, Allgemeine Krankheitslehre — die Kernfächer der SKL-Prüfung, ausgerichtet an der PhysTh-APrV. Kein Stoff, der nicht geprüft wird."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Gibt es MicroSkills auch für Ergotherapie und Pflege?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. MicroSkills deckt alle drei großen medizinischen Ausbildungsberufe ab: Physiotherapie (PhysTh-APrV), Ergotherapie (ErgThAPrV) und Gesundheits- und Krankenpflege (PflApprO 2020). Jede Berufsgruppe hat eigene Lernpfade mit fachspezifischen Inhalten und Prüfungsfragen."
         }
       }
     ]
@@ -898,6 +906,19 @@
     .demo__feedback.wrong { background: #fff3cd; border: 1px solid #ffc107; color: #856404; }
     .demo__cta { text-align: center; padding: 32px; background: var(--green-xlight); border-radius: var(--radius-lg); margin-top: 24px; }
     .demo__cta p { margin-bottom: 20px; line-height: 1.6; }
+
+    /* ─── Berufsgruppen ─────────────────────────────────────────── */
+    .berufsgruppen { padding: 60px 0; background: var(--bg); }
+    .berufsgruppen__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+    .berufsgruppe-card { background: var(--white); border: 2px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-decoration: none; color: var(--text); transition: border-color 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; gap: 12px; }
+    .berufsgruppe-card:hover { border-color: var(--green-dark); box-shadow: var(--shadow-md); }
+    .berufsgruppe-card__icon { font-size: 2.4rem; }
+    .berufsgruppe-card__title { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--text); }
+    .berufsgruppe-card__sub { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+    .berufsgruppe-card__themen { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .berufsgruppe-card__tag { background: var(--green-xlight); color: var(--green-dark); font-size: 0.78rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+    .berufsgruppe-card__cta { margin-top: auto; color: var(--green-dark); font-weight: 700; font-size: 0.9rem; }
+    @media (max-width: 768px) { .berufsgruppen__grid { grid-template-columns: 1fr; } }
   </style>
   <script defer data-domain="microskills.docmoritz.academy" src="https://analytics.docmoritz.academy/js/script.js"></script>
 </head>
@@ -956,7 +977,7 @@
         <div class="hero__proof-dot">AT</div>
         <div class="hero__proof-dot">+</div>
       </div>
-      <span>Bereits von Physio-Azubis in Deutschland genutzt</span>
+      <span>Bereits von Azubis in Physiotherapie, Ergotherapie und Pflege genutzt</span>
     </div>
   </div>
 </section>
@@ -1108,6 +1129,58 @@
   </div>
 </section>
 
+<!-- ─── Berufsgruppen ─────────────────────────────────────────── -->
+<section class="berufsgruppen" aria-labelledby="berufsgruppen-heading">
+  <div class="container">
+    <p class="section-label">Für welchen Ausbildungsberuf?</p>
+    <h2 class="section-title" id="berufsgruppen-heading">MicroSkills für alle drei medizinischen Ausbildungsberufe</h2>
+
+    <div class="berufsgruppen__grid">
+      <a href="/spezielle-krankheitslehre-physiotherapie-lernguide" class="berufsgruppe-card">
+        <div class="berufsgruppe-card__icon">&#129462;</div>
+        <div class="berufsgruppe-card__title">Physiotherapie</div>
+        <div class="berufsgruppe-card__sub">PhysTh-APrV — Spezielle Krankheitslehre für die mündliche Staatsexamen-Prüfung im 3. Ausbildungsjahr.</div>
+        <div class="berufsgruppe-card__themen">
+          <span class="berufsgruppe-card__tag">Innere Medizin</span>
+          <span class="berufsgruppe-card__tag">Chirurgie</span>
+          <span class="berufsgruppe-card__tag">Neurologie</span>
+          <span class="berufsgruppe-card__tag">Geriatrie</span>
+          <span class="berufsgruppe-card__tag">+7 Fächer</span>
+        </div>
+        <span class="berufsgruppe-card__cta">Zum Physio-Lernguide &#8594;</span>
+      </a>
+
+      <a href="/krankheitslehre-ergotherapie-lernguide" class="berufsgruppe-card">
+        <div class="berufsgruppe-card__icon">&#129309;</div>
+        <div class="berufsgruppe-card__title">Ergotherapie</div>
+        <div class="berufsgruppe-card__sub">ErgThAPrV — Krankheitslehre und Behandlungskonzepte für die Ergotherapie-Staatsexamen-Prüfung.</div>
+        <div class="berufsgruppe-card__themen">
+          <span class="berufsgruppe-card__tag">Neurologie</span>
+          <span class="berufsgruppe-card__tag">Psychiatrie</span>
+          <span class="berufsgruppe-card__tag">Pädiatrie</span>
+          <span class="berufsgruppe-card__tag">Innere Medizin</span>
+          <span class="berufsgruppe-card__tag">+2 Fächer</span>
+        </div>
+        <span class="berufsgruppe-card__cta">Zum Ergo-Lernguide &#8594;</span>
+      </a>
+
+      <a href="/krankheitslehre-pflege-lernguide" class="berufsgruppe-card">
+        <div class="berufsgruppe-card__icon">&#128138;</div>
+        <div class="berufsgruppe-card__title">Gesundheits- &amp; Krankenpflege</div>
+        <div class="berufsgruppe-card__sub">PflApprO 2020 — Krankheitslehre für die Pflege-Staatsexamen-Prüfung: klinisch, handlungsorientiert, auf Pflegeprozess-Niveau.</div>
+        <div class="berufsgruppe-card__themen">
+          <span class="berufsgruppe-card__tag">Innere Medizin</span>
+          <span class="berufsgruppe-card__tag">Neurologie</span>
+          <span class="berufsgruppe-card__tag">Chirurgie</span>
+          <span class="berufsgruppe-card__tag">Psychiatrie</span>
+          <span class="berufsgruppe-card__tag">+4 Fächer</span>
+        </div>
+        <span class="berufsgruppe-card__cta">Zum Pflege-Lernguide &#8594;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ─── Comparison Table ──────────────────────────────────────── -->
 <section class="comparison" aria-labelledby="comparison-heading">
   <div class="container">
@@ -1205,6 +1278,15 @@
         </button>
         <div class="faq__a" role="region">
           Innere Medizin, Chirurgie, Geriatrie, Arbeitsmedizin, Allgemeine Krankheitslehre — die Kernfächer der SKL-Prüfung, ausgerichtet an der PhysTh-APrV. Kein Stoff, der nicht geprüft wird.
+        </div>
+      </div>
+
+      <div class="faq__item" role="listitem">
+        <button class="faq__q" aria-expanded="false" onclick="toggleFaq(this)">
+          Gibt es MicroSkills auch für Ergotherapie und Pflege?
+        </button>
+        <div class="faq__a" role="region">
+          Ja. MicroSkills deckt alle drei großen medizinischen Ausbildungsberufe ab: <a href="/spezielle-krankheitslehre-physiotherapie-lernguide">Physiotherapie</a> (PhysTh-APrV), <a href="/krankheitslehre-ergotherapie-lernguide">Ergotherapie</a> (ErgThAPrV) und <a href="/krankheitslehre-pflege-lernguide">Gesundheits- und Krankenpflege</a> (PflApprO 2020). Jede Berufsgruppe hat eigene Lernpfade, Fachseiten und Prüfungsfragen auf dem jeweiligen Ausbildungsniveau.
         </div>
       </div>
     </div>
