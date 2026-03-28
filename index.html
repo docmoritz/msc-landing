@@ -382,6 +382,57 @@
       line-height: 1.65;
     }
 
+    /* ─── Fachgebiete ──────────────────────────────────────── */
+    .fachgebiete {
+      background: var(--white);
+      padding: 72px 0;
+    }
+
+    .fachgebiete__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .fach-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      text-decoration: none;
+      color: var(--text);
+      transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .fach-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+      border-color: var(--green-mid);
+    }
+
+    .fach-card__icon {
+      font-size: 1.5rem;
+    }
+
+    .fach-card__name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .fach-card__cta {
+      font-size: 0.8rem;
+      color: var(--green-dark);
+      font-weight: 600;
+      margin-top: auto;
+    }
+
     /* ─── Comparison Table ─────────────────────────────────── */
     .comparison {
       background: var(--white);
@@ -968,6 +1019,47 @@
         <h3>Sofortiges Feedback</h3>
         <p>Fallbeispiele mit direkter Rückmeldung — du weißt sofort, ob du es wirklich kannst oder nur glaubst, es verstanden zu haben.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Fachgebiete ───────────────────────────────────────────── -->
+<section class="fachgebiete" aria-labelledby="fachgebiete-heading">
+  <div class="container">
+    <p class="section-label">Prüfungsfächer</p>
+    <h2 class="section-title" id="fachgebiete-heading">Alle SKL-Fächer — gezielt auf dein Staatsexamen</h2>
+
+    <div class="fachgebiete__grid">
+      <a href="/innere-medizin-physiotherapie-staatsexamen" class="fach-card">
+        <div class="fach-card__icon">&#129441;</div>
+        <div class="fach-card__name">Innere Medizin &amp; Atemtherapie</div>
+        <span class="fach-card__cta">Lernguide &#8594;</span>
+      </a>
+      <a href="/chirurgie-physiotherapie-staatsexamen" class="fach-card">
+        <div class="fach-card__icon">&#129657;</div>
+        <div class="fach-card__name">Chirurgie &amp; Traumatologie</div>
+        <span class="fach-card__cta">Lernguide &#8594;</span>
+      </a>
+      <a href="/geriatrie-physiotherapie-staatsexamen" class="fach-card">
+        <div class="fach-card__icon">&#128116;</div>
+        <div class="fach-card__name">Geriatrie &amp; Sturzprophylaxe</div>
+        <span class="fach-card__cta">Lernguide &#8594;</span>
+      </a>
+      <a href="/arbeitsmedizin-physiotherapie-staatsexamen" class="fach-card">
+        <div class="fach-card__icon">&#127970;</div>
+        <div class="fach-card__name">Arbeitsmedizin &amp; Berufskrankheiten</div>
+        <span class="fach-card__cta">Lernguide &#8594;</span>
+      </a>
+      <a href="/allgemeine-krankheitslehre-physiotherapie-staatsexamen" class="fach-card">
+        <div class="fach-card__icon">&#128203;</div>
+        <div class="fach-card__name">Allgemeine Krankheitslehre</div>
+        <span class="fach-card__cta">Lernguide &#8594;</span>
+      </a>
+      <a href="/orthopaedie-befunderhebung-staatsexamen" class="fach-card">
+        <div class="fach-card__icon">&#129463;</div>
+        <div class="fach-card__name">Orthopädie &amp; Befunderhebung</div>
+        <span class="fach-card__cta">Lernguide &#8594;</span>
+      </a>
     </div>
   </div>
 </section>
